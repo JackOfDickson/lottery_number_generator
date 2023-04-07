@@ -5,7 +5,7 @@ def lotto_number_generator():
 
     while len(generated_lotto_numbers) < 6:
         lotto_number = randint(1,60)
-        if generated_lotto_numbers.count(lotto_number) != 1:
+        if lotto_number not in generated_lotto_numbers:
             generated_lotto_numbers.append(lotto_number)
         
     
@@ -13,3 +13,10 @@ def lotto_number_generator():
 
     return generated_lotto_numbers
 
+
+def hold_johns_bags():
+    john_looking_for_keys = True
+    while john_looking_for_keys:
+        user_input = input("Has john found keys?")
+        if user_input == "yes":
+            john_looking_for_keys = False
